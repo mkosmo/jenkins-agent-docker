@@ -1,6 +1,7 @@
 FROM jenkins/agent:latest
 
 USER root
+RUN addgroup --gid 998 --system docker
 RUN apt-get update && apt-get -y install \
     ca-certificates \
     curl \
@@ -18,4 +19,5 @@ RUN apt-get update && apt-get -y install \
     containerd.io \
     docker-compose-plugin \
     && rm -rf /var/lib/apt/lists/*
+RUN usermod -a -G docker jenkins
 USER jenkins
