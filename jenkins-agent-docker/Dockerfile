@@ -1,4 +1,4 @@
-FROM jenkins/agent:latest
+FROM jenkins/agent:bullseye-jdk11
 
 USER root
 RUN addgroup --gid 998 --system docker
