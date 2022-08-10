@@ -42,7 +42,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
-            type=schedule,pattern={{date 'YYYYMMDD'}
+            type=schedule,pattern=nightly
             type=ref,event=branch
             type=ref,event=pr
             type=sha
